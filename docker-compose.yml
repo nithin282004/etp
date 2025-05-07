@@ -1,0 +1,18 @@
+version: '3.8'
+services:
+  web:
+    # image: nginx:latest
+    build: .
+    ports:
+      - "8082:80"
+    depends_on:
+      - db
+  db:
+    image: postgres:latest
+    ports:
+      - "5432:5432"
+    environment:
+      POSTGRES_USER: user
+      POSTGRES_PASSWORD: password
+      POSTGRES_DB : mydb
+
