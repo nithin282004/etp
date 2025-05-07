@@ -16,7 +16,7 @@ pipeline{
         stage("Build"){
             steps{
                 script{
-                    bat 'docker-compose up'
+                    bat 'docker-compose up -d'
                 }
 
             }
